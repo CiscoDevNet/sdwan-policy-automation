@@ -225,8 +225,13 @@ if __name__ == '__main__':
 
         if response.status_code == 200:
             master_templates_affected = response.json()['masterTemplatesAffected']
-            if logger is not None:
-                logger.info("Master templates affected " + str(master_templates_affected))
+            if master_templates_affected:
+                print("\nMaster templates affected: %s"%master_templates_affected)
+                if logger is not None:
+                    logger.info("Master templates affected " + str(master_templates_affected))
+            else:
+                print("\nUpdated App route policy successfully")
+                exit()
         else:
             if logger is not None:
                 logger.error("\nFailed to edit app route policy " + str(response.text))
@@ -268,7 +273,9 @@ if __name__ == '__main__':
                 logger.info("Attach template process id " + str(response.text))
         else:
             if logger is not None:
-                logger.error("Template attach process failed " + str(response.text))     
+                logger.error("Template attach process failed " + str(response.text))
+            print("Template attach process failed " + str(response.text))
+            exit()
 
         api_url = '/device/action/status/' + process_id  
 

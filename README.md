@@ -41,7 +41,35 @@ pip3 install -r requirements.txt
 
 ![Yaml](./images/vmanage_login.png)
 
-- To modify the preferred color in Application Aware Routing policy, run the script using command `python3 modify-app-policy-color.py` on macOS/Ubuntu env or `py -3.7 modify-app-policy-color.py` on windows env
+- To modify the preferred color in Application Aware Routing policy, run the script using command `python modify-app-policy-color.py` on macOS/Ubuntu env or `py -3.7 modify-app-policy-color.py` on windows env
+
+- Possible input values for the new transport color are as below 
+
+```
+3g
+biz-internet
+blue
+bronze
+custom1
+custom2
+custom3
+gold
+green
+lte
+metro-ethernet
+mpls
+private1
+private2
+private3
+private4
+private5
+private6
+public-internet
+red
+silver
+```
+
+- Input value for the App route policy name is `Outlook-AAR-Policy` if you are using the DevNet SD-WAN 19.2 Reserve Sandbox
 
 ## Sample Outputs
 
